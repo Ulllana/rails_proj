@@ -1,7 +1,7 @@
 <ul>
   <%- @users.each do |user| %>
     <li>
-      <%= "#{user.name} created a #{user.catlists[0].name}
+      <%= "#{user.name} (#{user.email}) created a #{user.catlists[0].name}
             catlist with #{user.catlists[0].cats.count} cats" %>
     </li>
   <% end %>

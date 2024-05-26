@@ -3,7 +3,7 @@
   <%- @users.each do |user| %>
     <%- user.catlists[0].cats.each do |cat| %>
         <li>
-            <%= "#{cat.name}" %>
+            <%= "#{cat.name} #{cat.description}" %>
         </li>
     <% end %>
   <% end %>

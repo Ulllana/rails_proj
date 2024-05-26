@@ -4,4 +4,8 @@ class HomeController < ApplicationController
         @users = User.all
     end
 
+    def show_all_records
+        @users = User.includes(:catlists).all
+    end
+      
 end

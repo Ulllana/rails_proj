@@ -1,7 +1,7 @@
 class Catlist < ApplicationRecord
     validates :name, presence: true
 
-    belongs_to :user
+    belongs_to :country
     has_many :cats
 
     before_create :set_path

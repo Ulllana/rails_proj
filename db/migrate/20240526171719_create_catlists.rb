@@ -3,7 +3,8 @@ class CreateCatlists < ActiveRecord::Migration[7.1]
     create_table :catlists do |t|
       t.string :name, null: false
       t.string :path, null: false
-      t.references :user
+      t.text :description
+      t.references :country
 
       t.timestamps
     end

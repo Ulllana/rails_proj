@@ -1,10 +1,10 @@
 <h1>All Cats</h1>
 <ul>
-  <%- @users.each do |user| %>
-    <%- user.catlists[0].cats.each do |cat| %>
-        <li>
-            <%= "#{cat.name} #{cat.description}" %>
-        </li>
+  <% @catlists.each do |catlist| %>
+    <% catlist.cats.each do |cat| %>
+      <li>
+        <%= "#{cat.name} #{cat.description}" %>
+      </li>
     <% end %>
   <% end %>
 </ul>

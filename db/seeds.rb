@@ -7,7 +7,7 @@ unless User.any?
 
     user.save
 
-    user = User.create(name: 'Jimmy', email: 'jimmy@example.com')
+    user = User.create(name: 'Jimmy', email: 'jimmy@example.com', password: 'password', password_confirmation: 'password')
 
     catlist = user.catlists.create(name: 'Jimmy Catlist')
 

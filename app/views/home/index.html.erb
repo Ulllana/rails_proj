@@ -9,14 +9,8 @@
     <header class="header">
       <h1 class="page__title">GettyCats</h1>
       <div class="header_button">
-        <% if current_user %>
-          <%= button_to 'Create new cat', new_cat_path, method: :get %>
-          <p>Welcome <%= current_user.email %></p>
-          <%= link_to "Logout", logout_path, method: :delete %>
-        <% else %>
           <%= link_to "Login", login_path, class: 'btn' %>
           <%= link_to "Sign Up", signup_path, class: 'btn' %>
-        <% end %>
       </div>
     </header>
     <main class="main">

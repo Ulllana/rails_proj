@@ -1,0 +1,9 @@
+<h1>All User Records</h1>
+<ul>
+  <%- @users.each do |user| %>
+    <li>
+      <%= "#{user.name} created a #{user.catlists[0].name}
+            catlist with #{user.catlists[0].cats.count} cats" %>
+    </li>
+  <% end %>
+</ul>

@@ -1,5 +1,5 @@
 unless User.any?
-    user = User.create(name: 'Bob', email: 'bob@example.com')
+    user = User.create(name: 'Bob', email: 'bob@example.com', password: 'bobr', password_confirmation: 'bobr')
 
     catlist = user.catlists.create(name: 'Bob Catlist')
 

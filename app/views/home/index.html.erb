@@ -1,21 +1,40 @@
-<% if current_user %>
-  <p>Welcome <%= current_user.email %></p>
-  <%= link_to "Logout", logout_path, method: :delete %>
-<% else %>
-  <%= link_to "Login", login_path %> |
-  <%= link_to "Sign Up", signup_path %>
-<% end %>
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset="UTF-8"/>
+    <%= stylesheet_link_tag "style.css" %>
+  </head>
 
 
-<ul>
-  <%- @users.each do |user| %>
-    <li>
-      <%= "#{user.name} (#{user.email}) created a #{user.catlists[0].name}
-            catlist with #{user.catlists[0].cats.count} cats" %>
-    </li>
-  <% end %>
-</ul>
 
-<%= button_to 'Create new cat', new_cat_path, method: :get %>
+  <body class="page">
+    <header class="header">
+      <h1 class="page__title">GettyCats</h1>
+    </header>
+    <main class="main">
+      <div class="content">
+        <h2 class=main_title>Welcome to the website</h2>
+      </div>
+      <div class="main_btn">
 
-<%= button_to 'Show All Records', show_all_records_path, method: :get %>
+
+
+        
+        <% if current_user %>
+          <%= button_to 'Create new cat', new_cat_path, method: :get %>
+          
+          <p>Welcome <%= current_user.email %></p>
+          <%= link_to "Logout", logout_path, method: :delete %>
+        <% else %>
+          <%= link_to "Login", login_path, class: 'btn' %>
+          <%= link_to "Sign Up", signup_path, class: 'btn' %>
+        <% end %>
+        <%= button_to 'Show All Records', show_all_records_path, method: :get %>
+      </div>
+    </main>
+    <footer class="footer">
+
+    </footer>
+  </body>
+</html>

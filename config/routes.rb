@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get 'signup', to: 'registrations#new'
   post 'signup', to: 'registrations#create'
   get 'home/index'
-  # post 'catlists', to: 'home#create'
 
   root 'home#index'
   get 'new_cat', to: 'home#new_cat', as: 'new_cat'

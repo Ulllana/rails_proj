@@ -1,14 +1,23 @@
-<h1>New cat</h1>
-<%= form_with(model: @catlist) do |form| %>
-  <p>
-    <%= form.label :name %><br>
+<%= form_with model: @catlist, url: catlists_path, local: true do |form| %>
+  <% if @catlist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@catlist.errors.count, "error") %> prohibited this catlist from being saved:</h2>
+      <ul>
+        <% @catlist.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= form.label :name %>
     <%= form.text_field :name %>
-  </p>
-  <p>
-    <%= form.label :description %><br>
+  </div>
+  <div>
+    <%= form.label :description %>
     <%= form.text_area :description %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+  </div>
+  <div>
+    <%= form.submit "Create Catlist" %>
+  </div>
 <% end %>

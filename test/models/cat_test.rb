@@ -2,8 +2,8 @@ require 'test_helper'
 
 class CatTest < ActiveSupport::TestCase
   def setup
-    @user = User.create(name: "John", email: "john@example.com", password: "password", password_confirmation: "password")
-    @catlist = Catlist.create(name: "My Catlist", user: @user)
+    @country = Country.create(title: "Country 1")
+    @catlist = Catlist.create(name: "Catlist 1", country: @country)
     @cat = Cat.new(name: "Whiskers", catlist: @catlist)
   end
 

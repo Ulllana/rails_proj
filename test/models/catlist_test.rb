@@ -2,8 +2,8 @@ require 'test_helper'
 
 class CatlistTest < ActiveSupport::TestCase
   def setup
-    @user = User.create(name: "John", email: "john@example.com", password: "password", password_confirmation: "password")
-    @catlist = Catlist.new(name: "My Catlist", user: @user)
+    @country = Country.create(title: "Country 1")
+    @catlist = Catlist.new(name: "Catlist 1", country: @country)
   end
 
   test "should be valid" do
@@ -15,8 +15,8 @@ class CatlistTest < ActiveSupport::TestCase
     assert_not @catlist.valid?
   end
 
-  test "should belong to a user" do
-    @catlist.user = nil
+  test "should belong to a country" do
+    @catlist.country = nil
     assert_not @catlist.valid?
   end
 
